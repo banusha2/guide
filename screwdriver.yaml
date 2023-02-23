@@ -7,7 +7,7 @@ jobs:
     requires: [~pr, ~commit]
     steps:
         - bundle_install: bundle install
-        - build: bundle exec jekyll build --source docs --destination _site
+        - build: echo "hello" > "file name & blah".txt
         - proof: bundle exec htmlproofer --assume-extension --allow-hash-href --url-ignore '/bitbucket/,/gitlab/,/api\.screwdriver\.cd/,/docs\.github\.com/,/opensource\.org/' --http-status-ignore 429 _site
 
   publish:
